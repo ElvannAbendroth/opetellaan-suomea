@@ -4,7 +4,7 @@ const themeSwapper = require('tailwindcss-theme-swapper')
 const colors = require('tailwindcss/colors')
 
 const darkest = colors.gray[950]
-const lightest = colors.gray[100]
+const lightest = colors.gray[50]
 
 const themeSwapperPlugin = themeSwapper({
   themes: [
@@ -113,6 +113,15 @@ module.exports = {
       },
     },
     extend: {
+      maxWidth: {
+        layout: '64rem',
+        content: '48rem',
+      },
+      fontFamily: {
+        body: ['Lato'],
+        display: ['Poppins'],
+        mono: ['Roboto Mono'],
+      },
       borderRadius: {
         lg: '0.6rem',
         md: '0.3rem',
