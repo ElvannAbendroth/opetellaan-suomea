@@ -41,7 +41,7 @@ export default function Home() {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async e => {
     e.preventDefault()
-    if (verb!['present'][pronoun] === input) {
+    if (verb!['past'][pronoun] === input) {
       setScore({ ...score, success: score.success + 1 })
       // alert('Correct!')
       getRandomExercise()
@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-6 px-2">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 bg-white p-6 rounded-lg border-border border-[1px] ">
-        <p className="italic text-sm text-muted">present tense</p>
+        <p className="italic text-sm text-muted">past tense</p>
         <h3 className="typo-h3">{pronoun}</h3>
         <Input
           type="text"
