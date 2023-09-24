@@ -82,7 +82,7 @@ export default function Home() {
           skip
         </Button>
         {!showAnswer ? (
-          <p onClick={() => setShowAnswer(true)} className="text-sm underline text-tertiary">
+          <p onClick={() => setShowAnswer(true)} className="text-sm underline text-tertiary cursor-pointer">
             see answer
           </p>
         ) : (
