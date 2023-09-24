@@ -33,7 +33,7 @@ const themeSwapperPlugin = themeSwapper({
             hover: '#A275D3',
             foreground: darkest,
           },
-          destructive: {
+          danger: {
             DEFAULT: colors.red[500],
             hover: colors.red[400],
             foreground: lightest,

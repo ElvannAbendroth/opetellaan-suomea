@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 const buttonVariants = cva(
   [
     // general styling
-    'flex gap-2 rounded-full items-center justify-center  transition-all',
+    'flex gap-2 rounded-full items-center justify-center',
     //focus states
     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-muted/50 focus-visible:ring-offset-2 ring-offset-background',
     //disabled states

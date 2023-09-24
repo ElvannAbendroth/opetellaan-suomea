@@ -1,8 +1,7 @@
 'use client'
-import { cn } from '@lib/utils'
+
 import Image from 'next/image'
 import Link from 'next/link'
-import { buttonVariants } from './ui/Button'
 import { usePathname } from 'next/navigation'
 
 function Navbar() {
@@ -14,7 +13,16 @@ function Navbar() {
         <p className="hidden sm:block font-display text-xl font-bold text-primary">Opetellaan Suomea</p>
       </Link>
       <div className="flex gap-2">
-        <Link className={`rounded-lg px-2 py-1 text-sm  ${pathname === '/verbs' && 'bg-border/50'}`} href="/verbs">
+        <Link
+          className={`rounded-lg px-3 py-2 text-sm   ${pathname === '/about' ? 'bg-border/20' : 'hover:text-primary'}`}
+          href="/about"
+        >
+          about
+        </Link>
+        <Link
+          className={`rounded-lg px-3 py-2 text-sm   ${pathname === '/verbs' ? 'bg-border/20' : 'hover:text-primary'}`}
+          href="/verbs"
+        >
           verbs
         </Link>
       </div>

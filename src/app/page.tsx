@@ -1,14 +1,11 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client'
 
-import { verbs } from '@lib/data'
 import { cn } from '@lib/utils'
-
 import { Icons } from '@ui/Icons'
-import { Scoreboard } from '@ui/Scoreboard'
-import { Button, buttonVariants } from '@ui/ui/Button'
-import { Input } from '@ui/ui/Input'
+import { buttonVariants } from '@ui/ui/Button'
 import Link from 'next/link'
-import { ChangeEvent, FormEventHandler, useEffect, useState } from 'react'
+
 const items = [
   { id: 1, label: 'Verbs', href: '/verbs', description: 'Practice verb conjugaisons in different tense.' },
   // More items...
@@ -17,7 +14,9 @@ const items = [
 export default function Home() {
   return (
     <main className="flex flex-col gap-6 px-2">
-      <h2 className="typo-h2">Exercises</h2>
+      <p className="typo-p">Welcome to Opetellaan Suomea! Start by selecting an exercise!</p>
+
+      <h2 className="typo-h3">Exercises</h2>
       <ul role="list" className="space-y-3">
         {items.map(item => (
           <Link
