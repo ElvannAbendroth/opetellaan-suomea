@@ -11,7 +11,7 @@ const items = [
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-6 px-2">
+    <div className="flex flex-col gap-6">
       <h2 className="typo-h2">About</h2>
       <p className="typo-p">
         Opetellaan Suomea is a language learning tool that allows you to practice Finnish, with a focus on grammar and
@@ -27,6 +27,6 @@ export default function Home() {
         on improving these skills so they can more confidently use Finnish in real-world scenarios.
       </p>
       <p className="typo-p">Happy practicing!</p>
-    </main>
+    </div>
   )
 }

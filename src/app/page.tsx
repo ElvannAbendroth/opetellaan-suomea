@@ -13,7 +13,7 @@ const items = [
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-6 px-2">
+    <main className="flex flex-col gap-6">
       <p className="typo-p">Welcome to Opetellaan Suomea! Start by selecting an exercise!</p>
 
       <h2 className="typo-h3">Exercises</h2>

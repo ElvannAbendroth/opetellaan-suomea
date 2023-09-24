@@ -35,7 +35,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Navbar />
 
         <div className="flex-grow">
-          <main className="max-w-content w-content mx-auto pt-10 pb-10 px-4 sm:px-8">{children}</main>
+          <main className="max-w-content w-content mx-auto pt-6 pb-10 px-4 sm:px-8 ">{children}</main>
         </div>
         <footer className="p-8 pb-10 ">
           <p className="typo-p text-sm text-center text-muted">

@@ -82,7 +82,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="flex flex-col gap-6 px-2">
+    <div className="flex flex-col gap-6">
       <div className="flex justify-between">
         <div className="flex gap-2">
           <Button
@@ -116,10 +116,19 @@ export default function Home() {
         </div>
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 bg-white p-6 rounded-lg border-border border-[1px] ">
-        <p className="text-sm">
-          {verb && verb['infinitive']},&nbsp; <span className="italic text-muted">{filter.tense} tense</span>
-        </p>
-        <h3 className="typo-h3">{pronoun}</h3>
+        <div className="flex justify-between ">
+          <div className="flex flex-col gap-2">
+            <p className="text-sm">
+              {verb && verb['infinitive']},&nbsp; <span className="italic text-muted">{filter.tense} tense</span>
+            </p>
+            <h3 className="typo-h3">{pronoun}</h3>
+          </div>
+          <div>
+            <Button variant="ghost" size="sm" type="button" onClick={e => handleSkip()}>
+              <Icons.refresh size={20} />
+            </Button>
+          </div>
+        </div>
 
         <Input
           className={`${inputBorderColor}`}
@@ -133,10 +142,7 @@ export default function Home() {
           <Icons.send size={20} />
           submit
         </Button>
-        <Button type="button" onClick={e => handleSkip()}>
-          <Icons.refresh size={20} />
-          skip
-        </Button>
+
         {!showAnswer ? (
           <p onClick={() => setShowAnswer(true)} className="text-sm underline text-tertiary cursor-pointer">
             see answer
@@ -158,6 +164,6 @@ export default function Home() {
           <p>Verbtype: {verb && verb['verbtype']}</p>
         </div>
       </div>
-    </main>
+    </div>
   )
 }
