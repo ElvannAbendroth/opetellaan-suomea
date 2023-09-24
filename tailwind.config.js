@@ -24,8 +24,13 @@ const themeSwapperPlugin = themeSwapper({
             foreground: lightest,
           },
           secondary: {
-            DEFAULT: colors.lime[500],
-            hover: colors.lime[400],
+            DEFAULT: '#748E49',
+            hover: '#97AC75',
+            foreground: lightest,
+          },
+          tertiary: {
+            DEFAULT: '#8C4DCF', //berry magenta
+            hover: '#A275D3',
             foreground: darkest,
           },
           destructive: {

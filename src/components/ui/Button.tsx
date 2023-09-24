@@ -21,6 +21,8 @@ const buttonVariants = cva(
         subtle: 'bg-input hover:bg-input-hover border-border border-[0.5px]',
         outline: 'bg-background hover:bg-input border-input border-2',
         primary: 'bg-primary text-primary-foreground hover:bg-primary-hover',
+        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary-hover',
+        tertiary: 'bg-secondary text-secondary-foreground hover:bg-secondary-hover',
         danger: 'bg-danger text-danger-foreground hover:bg-danger-hover',
         link: 'bg-transparent text-foreground hover:text-primary',
         ghost: 'text-foreground hover:bg-foreground/5',

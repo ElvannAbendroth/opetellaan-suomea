@@ -3,6 +3,7 @@
 import { verbs } from '@lib/data'
 
 import { Icons } from '@ui/Icons'
+import { Scoreboard } from '@ui/Scoreboard'
 import { Button } from '@ui/ui/Button'
 import { Input } from '@ui/ui/Input'
 import { ChangeEvent, FormEventHandler, useEffect, useState } from 'react'
@@ -45,6 +46,8 @@ export default function Home() {
       setScore({ ...score, success: score.success + 1 })
       // alert('Correct!')
       getRandomExercise()
+    } else if (input === '') {
+      alert('Please provide an answer!')
     } else {
       setScore({ ...score, missed: score.missed + 1 })
       alert('Incorrect, try again!')
@@ -66,7 +69,7 @@ export default function Home() {
           placeholder={(verb && verb['infinitive']) || ''}
         />
 
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="secondary">
           <Icons.send size={20} />
           submit
         </Button>
@@ -75,19 +78,7 @@ export default function Home() {
           skip
         </Button>
       </form>
-      <div className="flex flex-col gap-4 bg-white p-6 rounded-lg border-border border-[1px]">
-        <h3 className="typo-h3">Score</h3>
-        <div className="flex justify-around font-bold text-3xl">
-          <span>{score.success}</span>
-          <span>{score.skipped}</span>
-          <span>{score.missed}</span>
-        </div>
-        <div className="flex justify-around">
-          <span>success</span>
-          <span>skipped</span>
-          <span>missed</span>
-        </div>
-      </div>
+      <Scoreboard score={score} />
 
       <div className="flex flex-col gap-4 bg-white p-6 rounded-lg border-border border-[1px]">
         <h3 className="typo-h3">Verb Info</h3>
