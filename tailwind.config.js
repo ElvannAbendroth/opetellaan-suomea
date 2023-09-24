@@ -15,12 +15,12 @@ const themeSwapperPlugin = themeSwapper({
         colors: {
           background: lightest,
           foreground: darkest,
-          border: colors.gray[200],
-          input: colors.gray[200],
+          border: colors.gray[300],
+          input: colors.white,
           ring: colors.gray[200],
           primary: {
-            DEFAULT: colors.violet[500],
-            hover: colors.violet[400],
+            DEFAULT: '#133D7D', //blueberry
+            hover: '#3A70A9',
             foreground: lightest,
           },
           secondary: {

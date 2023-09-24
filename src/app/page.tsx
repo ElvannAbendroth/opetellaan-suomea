@@ -55,9 +55,13 @@ const verbs = [
   },
 ]
 
-import { ChangeEvent, FormEventHandler, MouseEventHandler, useEffect, useState } from 'react'
+import { Icons } from '@ui/Icons'
+import { Button } from '@ui/ui/Button'
+import { Input } from '@ui/ui/Input'
+import { ChangeEvent, FormEventHandler, useEffect, useState } from 'react'
 
 export default function Home() {
+  const [score, setScore] = useState({ success: 0, skipped: 0, missed: 0 })
   const [verb, setVerb] = useState(null)
   const [pronoun, setPronoun] = useState('')
   const [input, setInput] = useState('')
@@ -83,12 +87,19 @@ export default function Home() {
     setInput(e.target.value)
   }
 
+  const handleSkip = () => {
+    getRandomExercise()
+    setScore({ ...score, skipped: score.skipped + 1 })
+  }
+
   const handleSubmit: FormEventHandler<HTMLFormElement> = async e => {
     e.preventDefault()
     if (verb!['present'][pronoun] === input) {
-      alert('Correct!')
+      setScore({ ...score, success: score.success + 1 })
+      // alert('Correct!')
       getRandomExercise()
     } else {
+      setScore({ ...score, missed: score.missed + 1 })
       alert('Incorrect, try again!')
     }
   }
@@ -97,26 +108,48 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="flex flex-col gap-6 p-4">
-      <h1 className="typo-h1">Welcome to Opetellaan Suomea!</h1>
-      <p>Conjugate those verbs in the present tense!</p>
-      <div className="">
-        <p>Verb: {verb && verb['infinitive']}</p>
-        <p>English: {verb && verb['english']}</p>
-        <p>Verbtype: {verb && verb['verbtype']}</p>
-      </div>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-        <p>
-          {pronoun} [{verb && verb['infinitive']}]
-        </p>
-        <input className="rounded-md" type="text" value={input} onChange={handleInputChange} />
-        <button type="submit" className="bg-blue-500 text-white py-2 px-3 rounded-md">
+    <main className="flex flex-col gap-6 px-2">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4 bg-white p-6 rounded-lg border-border border-[1px] ">
+        <p className="italic text-sm text-muted">present tense</p>
+        <h3 className="typo-h3">{pronoun}</h3>
+        <Input
+          type="text"
+          value={input}
+          onChange={handleInputChange}
+          placeholder={(verb && verb['infinitive']) || ''}
+        />
+
+        <Button type="submit" variant="primary">
+          <Icons.send size={20} />
           submit
-        </button>
+        </Button>
+        <Button type="button" onClick={e => handleSkip()}>
+          <Icons.refresh size={20} />
+          skip
+        </Button>
       </form>
-      <button className="bg-gray-500 text-white py-2 px-3 rounded-md" onClick={() => getRandomExercise()}>
-        skip
-      </button>
+      <div className="flex flex-col gap-4 bg-white p-6 rounded-lg border-border border-[1px]">
+        <h3 className="typo-h3">Score</h3>
+        <div className="flex justify-around font-bold text-3xl">
+          <span>{score.success}</span>
+          <span>{score.skipped}</span>
+          <span>{score.missed}</span>
+        </div>
+        <div className="flex justify-around">
+          <span>success</span>
+          <span>skipped</span>
+          <span>missed</span>
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-4 bg-white p-6 rounded-lg border-border border-[1px]">
+        <h3 className="typo-h3">Verb Info</h3>
+        <div className="">
+          <p>Verb: {verb && verb['infinitive']}</p>
+          <p>English: {verb && verb['english']}</p>
+          <p>Verbtype: {verb && verb['verbtype']}</p>
+        </div>
+      </div>
     </main>
   )
 }

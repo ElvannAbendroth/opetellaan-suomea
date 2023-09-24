@@ -9,6 +9,7 @@ import { siteConfig } from '@/lib/config'
 // import { Toaster } from '@/components/ui/Toaster'
 // import { ThemeProvider } from '@/components/ThemeProvider'
 // import ThemedHtml from '@/components/ThemedHtml'
+import Image from 'next/image'
 
 const lato = Lato({ weight: '400', subsets: ['latin'] })
 
@@ -26,6 +27,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en" className="h-full">
       <body className={`min-h-screen flex flex-col align-middle items-stretch `}>
         {/* <Navbar /> */}
+
+        <div className="flex items-center gap-3 px-6 py-4 border-b-border border-[1px] ">
+          <Image src="/opetellaan-suomea-logo-1.svg" width={40} height={40} alt="Logo" />
+          <p className="font-display text-xl font-bold text-primary">Opetellaan Suomea</p>
+        </div>
+
         <div className="flex-grow">
           <main className="max-w-content w-content mx-auto pt-12 pb-12 px-4 sm:px-8">{children}</main>
         </div>
