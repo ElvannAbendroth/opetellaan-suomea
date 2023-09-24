@@ -1,14 +1,17 @@
 'use client'
 
 import { verbs } from '@lib/data'
+import { cn } from '@lib/utils'
 
 import { Icons } from '@ui/Icons'
 import { Scoreboard } from '@ui/Scoreboard'
-import { Button } from '@ui/ui/Button'
+import { Button, buttonVariants } from '@ui/ui/Button'
 import { Input } from '@ui/ui/Input'
+import Link from 'next/link'
 import { ChangeEvent, FormEventHandler, useEffect, useState } from 'react'
 
 export default function Home() {
+  const [filter, setFilter] = useState({ tense: 'present' })
   const [showAnswer, setShowAnswer] = useState(false)
   const [score, setScore] = useState({ success: 0, skipped: 0, missed: 0 })
   const [verb, setVerb] = useState(null)
@@ -44,7 +47,7 @@ export default function Home() {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async e => {
     e.preventDefault()
-    if (verb!['past'][pronoun] === input.toLowerCase()) {
+    if (verb![filter.tense][pronoun] === input.toLowerCase()) {
       setScore({ ...score, success: score.success + 1 })
       // alert('Correct!')
       getRandomExercise()
@@ -52,7 +55,7 @@ export default function Home() {
       alert('Please provide an answer!')
     } else {
       setScore({ ...score, missed: score.missed + 1 })
-      alert(`Incorrect, the answer is "${verb!['present'][pronoun]}"!`)
+      alert(`Incorrect, try again!`)
     }
   }
 
@@ -62,9 +65,30 @@ export default function Home() {
 
   return (
     <main className="flex flex-col gap-6 px-2">
+      <div className="flex gap-2">
+        <Button
+          onClick={() => setFilter({ ...filter, tense: 'present' })}
+          variant="subtle"
+          size="sm"
+          className={`${filter.tense === 'present' && 'bg-border'}`}
+        >
+          present
+        </Button>
+        <Button
+          onClick={() => setFilter({ ...filter, tense: 'past' })}
+          variant="subtle"
+          size="sm"
+          className={`${filter.tense === 'past' && 'bg-border'}`}
+        >
+          past
+        </Button>
+      </div>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 bg-white p-6 rounded-lg border-border border-[1px] ">
-        <p className="italic text-sm text-muted">past tense</p>
+        <p className="text-sm">
+          {verb && verb['infinitive']},&nbsp; <span className="italic text-muted">{filter.tense} tense</span>
+        </p>
         <h3 className="typo-h3">{pronoun}</h3>
+
         <Input
           type="text"
           value={input}
@@ -72,7 +96,7 @@ export default function Home() {
           placeholder={(verb && verb['infinitive']) || ''}
         />
 
-        <Button type="submit" variant="secondary">
+        <Button type="submit" variant="primary">
           <Icons.send size={20} />
           submit
         </Button>
@@ -87,7 +111,7 @@ export default function Home() {
         ) : (
           <p className="text-sm text-muted">
             <span className="font-bold">answer: </span>
-            {verb && verb!['present'][pronoun]}
+            {verb && verb![filter.tense][pronoun]}
           </p>
         )}
       </form>

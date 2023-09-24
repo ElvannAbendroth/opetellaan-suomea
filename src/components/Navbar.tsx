@@ -14,17 +14,8 @@ function Navbar() {
         <p className="hidden sm:block font-display text-xl font-bold text-primary">Opetellaan Suomea</p>
       </Link>
       <div className="flex gap-2">
-        <Link
-          className={cn(buttonVariants({ variant: 'subtle', size: 'sm' }), `${pathname === '/' && 'bg-border'}`)}
-          href="/"
-        >
-          present
-        </Link>
-        <Link
-          href="/past"
-          className={cn(buttonVariants({ variant: 'subtle', size: 'sm' }), `${pathname === '/past' && 'bg-border'}`)}
-        >
-          past
+        <Link className={`rounded-lg px-2 py-1 text-sm  ${pathname === '/verbs' && 'bg-border/50'}`} href="/verbs">
+          verbs
         </Link>
       </div>
     </div>
