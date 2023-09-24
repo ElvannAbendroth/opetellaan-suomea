@@ -1,4 +1,3 @@
-'use client'
 import '@/styles/globals.css'
 import { useState } from 'react'
 
@@ -38,25 +37,25 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ]
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+export default function Layout({ children }: { children: React.ReactNode }) {
+  // const [sidebarOpen, setSidebarOpen] = useState(false)
   return (
     <html lang="en" className="h-full">
       <body className={`h-full `} suppressHydrationWarning>
         <div>
           {/* Openable sidebar for mobile */}
-          <MobileSideNav
+          {/* <MobileSideNav
             sidebarOpen={sidebarOpen}
             setSidebarOpen={setSidebarOpen}
             teams={teams}
             navigation={navigation}
-          />
+          /> */}
 
           {/* Static sidebar for desktop */}
-          <DesktopSideNav teams={teams} navigation={navigation} />
+          {/* <DesktopSideNav teams={teams} navigation={navigation} /> */}
 
           <div className="lg:pl-72">
-            <TopNav setSidebarOpen={setSidebarOpen} userNavigation={userNavigation} />
+            {/* <TopNav setSidebarOpen={setSidebarOpen} userNavigation={userNavigation} /> */}
 
             <main className="py-10">
               <div className="px-4 sm:px-6 lg:px-8">{children}</div>
