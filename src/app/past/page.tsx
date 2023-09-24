@@ -9,6 +9,7 @@ import { Input } from '@ui/ui/Input'
 import { ChangeEvent, FormEventHandler, useEffect, useState } from 'react'
 
 export default function Home() {
+  const [showAnswer, setShowAnswer] = useState(false)
   const [score, setScore] = useState({ success: 0, skipped: 0, missed: 0 })
   const [verb, setVerb] = useState(null)
   const [pronoun, setPronoun] = useState('')
@@ -27,6 +28,7 @@ export default function Home() {
 
   const getRandomExercise = () => {
     setInput('')
+    setShowAnswer(false)
     getRandomPronoun()
     getRandomVerb(verbs)
   }
@@ -42,7 +44,7 @@ export default function Home() {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async e => {
     e.preventDefault()
-    if (verb!['past'][pronoun] === input) {
+    if (verb!['past'][pronoun] === input.toLowerCase()) {
       setScore({ ...score, success: score.success + 1 })
       // alert('Correct!')
       getRandomExercise()
@@ -50,9 +52,10 @@ export default function Home() {
       alert('Please provide an answer!')
     } else {
       setScore({ ...score, missed: score.missed + 1 })
-      alert('Incorrect, try again!')
+      alert(`Incorrect, the answer is "${verb!['present'][pronoun]}"!`)
     }
   }
+
   useEffect(() => {
     getRandomExercise()
   }, [])
@@ -77,6 +80,16 @@ export default function Home() {
           <Icons.refresh size={20} />
           skip
         </Button>
+        {!showAnswer ? (
+          <p onClick={() => setShowAnswer(true)} className="text-sm underline text-tertiary">
+            see answer
+          </p>
+        ) : (
+          <p className="text-sm text-muted">
+            <span className="font-bold">answer: </span>
+            {verb && verb!['present'][pronoun]}
+          </p>
+        )}
       </form>
       <Scoreboard score={score} />
 
