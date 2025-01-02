@@ -1,3 +1,5 @@
+import { Noun, Sentence } from './types'
+
 export const verbs = [
   {
     infinitive: 'rakastaa',
@@ -622,5 +624,530 @@ export const verbs = [
         he: 'löydettiin',
       },
     },
+  },
+]
+
+export const foodsWords: Noun[] = [
+  {
+    nominative: {
+      singular: 'omena',
+      plural: 'omenat',
+    },
+    english: 'apple',
+    root: 'omena',
+    genitive: 'omenan',
+    partitive: {
+      singular: 'omenaa',
+      plural: 'omenia',
+    },
+    inessive: {
+      singular: 'omenassa',
+      plural: 'omenissa',
+    },
+    elative: {
+      singular: 'omenasta',
+      plural: 'omenista',
+    },
+    illative: {
+      singular: 'omenaan',
+      plural: 'omeniin',
+    },
+    adessive: {
+      singular: 'omenalla',
+      plural: 'omenilla',
+    },
+    ablative: {
+      singular: 'omenalta',
+      plural: 'omenilta',
+    },
+    allative: {
+      singular: 'omenalle',
+      plural: 'omenille',
+    },
+    essive: {
+      singular: 'omenana',
+      plural: 'omenina',
+    },
+    translative: {
+      singular: 'omenaksi',
+      plural: 'omeniksi',
+    },
+  },
+  {
+    nominative: {
+      singular: 'leipä',
+      plural: 'leivät',
+    },
+    english: 'bread',
+    root: 'leipä',
+    genitive: 'leivän',
+    partitive: {
+      singular: 'leipää',
+      plural: 'leipiä',
+    },
+    inessive: {
+      singular: 'leivässä',
+      plural: 'leivissä',
+    },
+    elative: {
+      singular: 'leivästä',
+      plural: 'leivistä',
+    },
+    illative: {
+      singular: 'leipään',
+      plural: 'leipiin',
+    },
+    adessive: {
+      singular: 'leivällä',
+      plural: 'leivillä',
+    },
+    ablative: {
+      singular: 'leivältä',
+      plural: 'leiviltä',
+    },
+    allative: {
+      singular: 'leivälle',
+      plural: 'leiville',
+    },
+    essive: {
+      singular: 'leipänä',
+      plural: 'leipinä',
+    },
+    translative: {
+      singular: 'leiväksi',
+      plural: 'leiviksi',
+    },
+  },
+  {
+    nominative: {
+      singular: 'maito',
+      plural: 'maidot',
+    },
+    english: 'milk',
+    root: 'maito',
+    genitive: 'maidon',
+    partitive: {
+      singular: 'maitoa',
+      plural: 'maitoja',
+    },
+    inessive: {
+      singular: 'maidossa',
+      plural: 'maidoissa',
+    },
+    elative: {
+      singular: 'maidosta',
+      plural: 'maidoista',
+    },
+    illative: {
+      singular: 'maitoon',
+      plural: 'maitoihin',
+    },
+    adessive: {
+      singular: 'maidolla',
+      plural: 'maidoilla',
+    },
+    ablative: {
+      singular: 'maidolta',
+      plural: 'maidoilta',
+    },
+    allative: {
+      singular: 'maidolle',
+      plural: 'maidoille',
+    },
+    essive: {
+      singular: 'maitona',
+      plural: 'maitoina',
+    },
+    translative: {
+      singular: 'maidoksi',
+      plural: 'maidoiksi',
+    },
+  },
+  {
+    nominative: {
+      singular: 'juusto',
+      plural: 'juustot',
+    },
+    english: 'cheese',
+    root: 'juusto',
+    genitive: 'juuston',
+    partitive: {
+      singular: 'juustoa',
+      plural: 'juustoja',
+    },
+    inessive: {
+      singular: 'juustossa',
+      plural: 'juustoissa',
+    },
+    elative: {
+      singular: 'juustosta',
+      plural: 'juustoista',
+    },
+    illative: {
+      singular: 'juustoon',
+      plural: 'juustoihin',
+    },
+    adessive: {
+      singular: 'juustolla',
+      plural: 'juustoilla',
+    },
+    ablative: {
+      singular: 'juustolta',
+      plural: 'juustoilta',
+    },
+    allative: {
+      singular: 'juustolle',
+      plural: 'juustoille',
+    },
+    essive: {
+      singular: 'juustona',
+      plural: 'juustoina',
+    },
+    translative: {
+      singular: 'juustoksi',
+      plural: 'juustoiksi',
+    },
+  },
+  {
+    nominative: {
+      singular: 'kala',
+      plural: 'kalat',
+    },
+    english: 'fish',
+    root: 'kala',
+    genitive: 'kalan',
+    partitive: {
+      singular: 'kalaa',
+      plural: 'kaloja',
+    },
+    inessive: {
+      singular: 'kalassa',
+      plural: 'kaloissa',
+    },
+    elative: {
+      singular: 'kalasta',
+      plural: 'kaloista',
+    },
+    illative: {
+      singular: 'kalaan',
+      plural: 'kaloihin',
+    },
+    adessive: {
+      singular: 'kalalla',
+      plural: 'kaloilla',
+    },
+    ablative: {
+      singular: 'kalalta',
+      plural: 'kaloilta',
+    },
+    allative: {
+      singular: 'kalalle',
+      plural: 'kaloille',
+    },
+    essive: {
+      singular: 'kalana',
+      plural: 'kalina',
+    },
+    translative: {
+      singular: 'kalaksi',
+      plural: 'kaloiksi',
+    },
+  },
+  {
+    nominative: {
+      singular: 'kananmuna',
+      plural: 'kananmunat',
+    },
+    english: 'egg',
+    root: 'kananmuna',
+    genitive: 'kananmunan',
+    partitive: {
+      singular: 'kananmunaa',
+      plural: 'kananmunia',
+    },
+    inessive: {
+      singular: 'kananmunassa',
+      plural: 'kananmunissa',
+    },
+    elative: {
+      singular: 'kananmunasta',
+      plural: 'kananmunista',
+    },
+    illative: {
+      singular: 'kananmunaan',
+      plural: 'kananmuniin',
+    },
+    adessive: {
+      singular: 'kananmunalla',
+      plural: 'kananmunilla',
+    },
+    ablative: {
+      singular: 'kananmunalta',
+      plural: 'kananmunilta',
+    },
+    allative: {
+      singular: 'kananmunalle',
+      plural: 'kananmunille',
+    },
+    essive: {
+      singular: 'kananmunana',
+      plural: 'kananmunina',
+    },
+    translative: {
+      singular: 'kananmunaksi',
+      plural: 'kananmuniksi',
+    },
+  },
+  {
+    nominative: {
+      singular: 'vihannes',
+      plural: 'vihannekset',
+    },
+    english: 'vegetable',
+    root: 'vihannes',
+    genitive: 'vihanneksen',
+    partitive: {
+      singular: 'vihannesta',
+      plural: 'vihanneksia',
+    },
+    inessive: {
+      singular: 'vihanneksessa',
+      plural: 'vihanneksissa',
+    },
+    elative: {
+      singular: 'vihanneksesta',
+      plural: 'vihanneksista',
+    },
+    illative: {
+      singular: 'vihannekseen',
+      plural: 'vihanneksiin',
+    },
+    adessive: {
+      singular: 'vihanneksella',
+      plural: 'vihanneksilla',
+    },
+    ablative: {
+      singular: 'vihannekselta',
+      plural: 'vihanneksilta',
+    },
+    allative: {
+      singular: 'vihannekselle',
+      plural: 'vihanneksille',
+    },
+    essive: {
+      singular: 'vihanneksena',
+      plural: 'vihanneksina',
+    },
+    translative: {
+      singular: 'vihannekseksi',
+      plural: 'vihanneksiksi',
+    },
+  },
+  {
+    nominative: {
+      singular: 'hedelmä',
+      plural: 'hedelmät',
+    },
+    english: 'fruit',
+    root: 'hedelmä',
+    genitive: 'hedelmän',
+    partitive: {
+      singular: 'hedelmää',
+      plural: 'hedelmiä',
+    },
+    inessive: {
+      singular: 'hedelmässä',
+      plural: 'hedelmissä',
+    },
+    elative: {
+      singular: 'hedelmästä',
+      plural: 'hedelmistä',
+    },
+    illative: {
+      singular: 'hedelmään',
+      plural: 'hedelmiin',
+    },
+    adessive: {
+      singular: 'hedelmällä',
+      plural: 'hedelmillä',
+    },
+    ablative: {
+      singular: 'hedelmältä',
+      plural: 'hedelmiltä',
+    },
+    allative: {
+      singular: 'hedelmälle',
+      plural: 'hedelmille',
+    },
+    essive: {
+      singular: 'hedelmänä',
+      plural: 'hedelminä',
+    },
+    translative: {
+      singular: 'hedelmäksi',
+      plural: 'hedelmiksi',
+    },
+  },
+  {
+    nominative: {
+      singular: 'liha',
+      plural: 'lihat',
+    },
+    english: 'meat',
+    root: 'liha',
+    genitive: 'lihan',
+    partitive: {
+      singular: 'lihaa',
+      plural: 'lihoja',
+    },
+    inessive: {
+      singular: 'lihassa',
+      plural: 'lihoissa',
+    },
+    elative: {
+      singular: 'lihasta',
+      plural: 'lihoista',
+    },
+    illative: {
+      singular: 'lihaan',
+      plural: 'lihoihin',
+    },
+    adessive: {
+      singular: 'lihalla',
+      plural: 'lihoilla',
+    },
+    ablative: {
+      singular: 'lihalta',
+      plural: 'lihoilta',
+    },
+    allative: {
+      singular: 'lihalle',
+      plural: 'lihoille',
+    },
+    essive: {
+      singular: 'lihana',
+      plural: 'lihoina',
+    },
+    translative: {
+      singular: 'lihaksi',
+      plural: 'lihoiksi',
+    },
+  },
+]
+
+export const foodSentences: Sentence[] = [
+  {
+    sentence: 'Syön ___ joka päivä.',
+    english: 'I eat ___ every day.',
+    answer: ['partitive', 'singular'],
+    nouns: ['omena', 'liha', 'leipä', 'juusto', 'kala'],
+    explanation:
+      "The partitive is used here because 'syön' (to eat) often implies an incomplete action or part of a whole. Singular partitive forms are required.",
+  },
+  {
+    sentence: 'Tarvitsen ___ juhliin.',
+    english: 'I need ___ for the party.',
+    answer: ['partitive', 'plural'],
+    nouns: ['omena', 'liha', 'leipä', 'juusto', 'vihannes'],
+    explanation:
+      "The partitive plural is used because 'tarvitsen' (to need) implies a general or undefined amount of something in this context.",
+  },
+  {
+    sentence: 'Laitan ___ pöydälle.',
+    english: 'I put ___ on the table.',
+    answer: ['illative', 'singular'],
+    nouns: ['omena', 'kananmuna', 'juusto', 'kala', 'vihannes'],
+    explanation:
+      'The illative is used because the sentence describes movement towards or into a location (pöydälle, onto the table).',
+  },
+  {
+    sentence: 'Olen kiinnostunut ___ valmistuksesta.',
+    english: 'I am interested in the preparation of ___.',
+    answer: ['genitive', 'singular'],
+    nouns: ['leipä', 'juusto', 'liha', 'kala'],
+    explanation:
+      "The genitive singular is used because 'kiinnostunut' (interested) requires the genitive case for the object of interest.",
+  },
+  {
+    sentence: 'Puhumme usein ___ terveydestä.',
+    english: 'We often talk about the health benefits of ___.',
+    answer: ['genitive', 'plural'],
+    nouns: ['vihannes', 'hedelmä'],
+    explanation:
+      'The genitive plural is used to describe possession or association with multiple items (benefits of fruits/vegetables).',
+  },
+  {
+    sentence: 'Hän syö ___ lautasella.',
+    english: 'He/she eats ___ on the plate.',
+    answer: ['inessive', 'singular'],
+    nouns: ['leipä', 'kala', 'juusto', 'hedelmä', 'vihannes', 'liha'],
+    explanation:
+      'The inessive case (inside or on something) is used to indicate the location where the action occurs (on the plate).',
+  },
+  {
+    sentence: 'Löysin ___ metsästä.',
+    english: 'I found ___ in the forest.',
+    answer: ['partitive', 'singular'],
+    nouns: ['hedelmä', 'vihannes'],
+    explanation: 'The partitive is used to express partiality or an undefined quantity of what was found.',
+  },
+  {
+    sentence: 'Tuon ___ mukaani.',
+    english: 'I will bring ___ with me.',
+    answer: ['translative', 'singular'],
+    nouns: ['omena', 'vihannes', 'juusto', 'kala', 'liha'],
+    explanation: 'The translative is used to express a change or transition, here describing the item being brought.',
+  },
+  {
+    sentence: 'Pidän ___ mausta.',
+    english: 'I like the taste of ___.',
+    answer: ['ablative', 'singular'],
+    nouns: ['juusto', 'leipä', 'kala', 'liha'],
+    explanation: 'The ablative is used to indicate the source or origin of the taste being liked.',
+  },
+  {
+    sentence: 'Anna nämä ___ keittiöön.',
+    english: 'Give these to the kitchen.',
+    answer: ['allative', 'plural'],
+    nouns: ['omena', 'vihannes', 'juusto', 'leipä'],
+    explanation: 'The allative plural is used to indicate the direction or recipient of the action (to the kitchen).',
+  },
+  {
+    sentence: 'Jätimme ___ pöydälle.',
+    english: 'We left ___ on the table.',
+    answer: ['inessive', 'plural'],
+    nouns: ['hedelmä', 'vihannes', 'juusto', 'leipä'],
+    explanation: 'The inessive plural is used to describe the location of multiple items (on the table).',
+  },
+  {
+    sentence: 'Söimme ___ jo eilen.',
+    english: 'We already ate ___ yesterday.',
+    answer: ['partitive', 'plural'],
+    nouns: ['hedelmä', 'vihannes', 'juusto', 'leipä', 'kala'],
+    explanation:
+      'The partitive plural is used because eating multiple items involves an indefinite quantity or incomplete action.',
+  },
+  {
+    sentence: 'Rakastan ___ hajua.',
+    english: 'I love the smell of ___.',
+    answer: ['genitive', 'singular'],
+    nouns: ['kahvi', 'leipä', 'juusto'],
+    explanation:
+      'The genitive is used to express possession or association (the smell belonging to coffee, bread, or cheese).',
+  },
+  {
+    sentence: 'Hän vei ___ takaisin kauppaan.',
+    english: 'He/she returned ___ to the store.',
+    answer: ['illative', 'singular'],
+    nouns: ['kala', 'juusto', 'hedelmä'],
+    explanation: 'The illative is used to describe movement into or towards a place (to the store).',
+  },
+  {
+    sentence: 'Puhumme usein ___ hyödyistä.',
+    english: 'We often talk about the benefits of ___.',
+    answer: ['essive', 'plural'],
+    nouns: ['vihannes', 'hedelmä'],
+    explanation:
+      'The essive plural is used to describe the role or state of something (the benefits as fruits/vegetables).',
   },
 ]

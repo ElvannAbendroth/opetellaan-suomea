@@ -30,7 +30,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <body className={`min-h-screen flex flex-col align-middle items-stretch `}>
         <Navbar />
 

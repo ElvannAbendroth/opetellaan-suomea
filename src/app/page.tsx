@@ -8,6 +8,12 @@ import Link from 'next/link'
 
 const items = [
   { id: 1, label: 'Verbs', href: '/verbs', description: 'Practice verb conjugaisons in different tense.' },
+  {
+    id: 2,
+    label: 'Food',
+    href: '/food',
+    description: 'Practice noun conjugaisons for food words using the different cases',
+  },
   // More items...
 ]
 
@@ -20,7 +26,7 @@ export default function Home() {
       <ul role="list" className="space-y-3">
         {items.map(item => (
           <Link
-            href="/verbs"
+            href={item.href}
             key={item.id}
             className="overflow-hidden rounded-lg bg-white px-6 py-4 shadow flex gap-4 hover:scale-[102%] transition-all"
           >
