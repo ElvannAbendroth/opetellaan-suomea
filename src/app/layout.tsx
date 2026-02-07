@@ -39,7 +39,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </div>
         <footer className="p-8 pb-10 ">
           <p className="typo-p text-sm text-center text-muted">
-            Opetellaan Suomea App created with NextJS 13 & Tailwind by Oodri. Checkout the project on{' '}
+            Opetellaan Suomea App created with NextJS 14 & Tailwind by Oodri. Checkout the project on{' '}
             <a className="typo-a" href="https://github.com/ElvannAbendroth/" target="_blank">
               Github
             </a>
